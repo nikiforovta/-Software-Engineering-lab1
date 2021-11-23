@@ -1,6 +1,6 @@
 import sys
 
-USAGE = "Usage: [-C|-F] degree"
+USAGE = "Usage: [-C (default)|-F] degree"
 
 
 def main():
