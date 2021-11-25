@@ -1,40 +1,39 @@
-import sys
-
-USAGE = "Usage: [-C (default)|-F] degrees"
+USAGE = "Usage: [-C (default)|-F] degrees\n"
 
 
 def main():
-    if len(sys.argv) == 1:
+    argv = input(USAGE).split()
+    if len(argv) == 0:
         print("Error! Not enough arguments")
         print(USAGE)
-    elif len(sys.argv) == 2:
+    elif len(argv) == 1:
         try:
-            print(f"You entered:\t{float(sys.argv[1])} °C")
-            print(f"Result:\t{(9 / 5 * float(sys.argv[1]) + 32):.3f} °F")
+            print(f"You entered:\t{float(argv[0])} °C")
+            print(f"Result:\t{(9 / 5 * float(argv[0]) + 32):.3f} °F")
         except ValueError:
             print("Error! Incorrect argument")
-    elif len(sys.argv) >= 3:
-        if sys.argv[1] == '-C':
+    elif len(argv) >= 2:
+        if argv[0] == '-C':
             try:
-                for k in range(2, len(sys.argv)):
-                    print(f"You entered:\t{float(sys.argv[k])} °C")
-                    print(f"Result:\t{(9 / 5 * float(sys.argv[k]) + 32):.3f} °F")
+                for k in range(1, len(argv)):
+                    print(f"You entered:\t{float(argv[k])} °C")
+                    print(f"Result:\t{(9 / 5 * float(argv[k]) + 32):.3f} °F")
             except ValueError:
                 print("Error! Incorrect argument")
-        elif sys.argv[1] == '-F':
-            for k in range(2, len(sys.argv)):
+        elif argv[0] == '-F':
+            for k in range(1, len(argv)):
                 try:
-                    print(f"You entered:\t{float(sys.argv[k])} °F")
-                    print(f"Result:\t{(5 / 9 * (float(sys.argv[k]) - 32)):.3f} °С")
+                    print(f"You entered:\t{float(argv[k])} °F")
+                    print(f"Result:\t{(5 / 9 * (float(argv[k]) - 32)):.3f} °С")
                 except ValueError:
                     print("Error! Incorrect argument")
         else:
             try:
-                float(sys.argv[1])
-                for k in range(1, len(sys.argv)):
+                float(argv[0])
+                for k in range(0, len(argv)):
                     try:
-                        print(f"You entered:\t{float(sys.argv[k])} °C")
-                        print(f"Result:\t{(9 / 5 * float(sys.argv[k]) + 32):.3f} °F")
+                        print(f"You entered:\t{float(argv[k])} °C")
+                        print(f"Result:\t{(9 / 5 * float(argv[k]) + 32):.3f} °F")
                     except ValueError:
                         print("Error! Incorrect argument")
             except ValueError:
