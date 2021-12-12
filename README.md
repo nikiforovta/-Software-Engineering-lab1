@@ -1,5 +1,5 @@
 # Software-Engineering-lab
-
+[![Python application](https://github.com/nikiforovta/Software-Engineering-lab1/actions/workflows/python-app.yml/badge.svg)](https://github.com/nikiforovta/Software-Engineering-lab1/actions/workflows/python-app.yml)
 ## Лабораторные работы по курсу основ программной инженерии
 
 ### Запуск скрипта напрямую
